@@ -3,6 +3,7 @@ package buildcraft.additionalpipes.gui;
 import buildcraft.additionalpipes.pipes.PipeBehaviorAdvWood;
 import buildcraft.additionalpipes.pipes.PipeBehaviorClosed;
 import buildcraft.additionalpipes.pipes.PipeBehaviorDistribution;
+import buildcraft.additionalpipes.pipes.PipeBehaviorDistributionFluids;
 import buildcraft.additionalpipes.pipes.PipeBehaviorJeweled;
 import buildcraft.additionalpipes.pipes.PipeBehaviorPriorityInsertion;
 import buildcraft.additionalpipes.pipes.PipeBehaviorTeleport;
@@ -22,6 +23,7 @@ public class GuiHandler implements IGuiHandler {
 	public static final int PIPE_CLOSED = 4;
 	public static final int PIPE_PRIORITY = 5;
 	public static final int PIPE_JEWELED = 6;
+	public static final int PIPE_DIST_FLUID = 7;
 
 
 	@Override
@@ -46,6 +48,8 @@ public class GuiHandler implements IGuiHandler {
 			return new ContainerPriorityInsertionPipe((PipeBehaviorPriorityInsertion) ((TilePipeHolder) tile).getPipe().getBehaviour());
 		case PIPE_JEWELED:
 			return new ContainerJeweledPipe(player.inventory, ((PipeBehaviorJeweled)((TilePipeHolder) tile).getPipe().getBehaviour()));
+		case PIPE_DIST_FLUID:
+			return new ContainerDistributionPipeFluids((PipeBehaviorDistributionFluids) ((TilePipeHolder) tile).getPipe().getBehaviour());
 		default:
 			return null;
 		}
@@ -74,6 +78,8 @@ public class GuiHandler implements IGuiHandler {
 			return new GuiPriorityInsertionPipe((PipeBehaviorPriorityInsertion) ((TilePipeHolder) tile).getPipe().getBehaviour());
 		case PIPE_JEWELED:
 			return new GuiJeweledPipe(player.inventory, ((PipeBehaviorJeweled)((TilePipeHolder) tile).getPipe().getBehaviour()));
+		case PIPE_DIST_FLUID:
+			return new GuiDistributionPipeFluids((PipeBehaviorDistributionFluids) ((TilePipeHolder) tile).getPipe().getBehaviour());
 		default:
 			return null;
 		}

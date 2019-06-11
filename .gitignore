@@ -21,3 +21,5 @@ MinecraftForge-*.txt
 *.iml
 /.idea/
 /classes/
+
+*.launch

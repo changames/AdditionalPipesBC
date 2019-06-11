@@ -1,7 +1,7 @@
 [{
   "modid": "additionalpipes",
   "name": "Additional Pipes",
-  "version": "${version}",
+  "version": "6.0.0.8 CHAN",
   "url": "https://github.com/tcooc/AdditionalPipesBC/",
   "updateUrl": "",
   "description": "Teleport, insertion, extraction, and other pipes.",

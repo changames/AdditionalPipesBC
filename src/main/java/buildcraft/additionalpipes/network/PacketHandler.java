@@ -3,6 +3,7 @@ package buildcraft.additionalpipes.network;
 import buildcraft.additionalpipes.AdditionalPipes;
 import buildcraft.additionalpipes.network.message.MessageAdvWoodPipe;
 import buildcraft.additionalpipes.network.message.MessageDistPipe;
+import buildcraft.additionalpipes.network.message.MessageDistPipeFluids;
 import buildcraft.additionalpipes.network.message.MessageJeweledPipeOptionsClient;
 import buildcraft.additionalpipes.network.message.MessageJeweledPipeOptionsServer;
 import buildcraft.additionalpipes.network.message.MessagePriorityPipe;
@@ -28,6 +29,6 @@ public class PacketHandler
         INSTANCE.registerMessage(MessagePriorityPipe.class, MessagePriorityPipe.class, 6, Side.SERVER);
         INSTANCE.registerMessage(MessageJeweledPipeOptionsServer.class, MessageJeweledPipeOptionsServer.class, 7, Side.SERVER);
         INSTANCE.registerMessage(MessageJeweledPipeOptionsClient.class, MessageJeweledPipeOptionsClient.class, 8, Side.CLIENT);
-
+        INSTANCE.registerMessage(MessageDistPipeFluids.class, MessageDistPipeFluids.class, 9, Side.SERVER);
     }
 }

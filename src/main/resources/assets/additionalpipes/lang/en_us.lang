@@ -2,6 +2,7 @@ item.pipe.ap.pipe_items_priority.name=Priority Insertion Pipe
 item.pipe.ap.pipe_items_adv_wood.name=Adv. Wooden Transport Pipe
 item.pipe.ap.pipe_items_gravity_feed.name=Gravity Feed Transport Pipe
 item.pipe.ap.pipe_items_distribution.name=Distribution Transport Pipe
+item.pipe.ap.pipe_fluids_distribution.name=Fluid Distribution Transport Pipe
 item.pipe.ap.pipe_items_closed.name=Closed Transport Pipe
 item.pipe.ap.pipe_items_teleport.name=Item Teleport Pipe
 item.pipe.ap.pipe_fluids_teleport.name=Fluid Teleport Pipe
@@ -22,6 +23,7 @@ gui.priority_insertion.title=Priority Insertion Pipe
 
 #Distribution Pipe
 gui.distribution_pipe.title=Distribution Pipe
+gui.distribution_pipe_fluids.title=Fluid Distribution Pipe
 
 # Pipe Tooltips
 tip.pipe.ap.pipe_items_priority=Fills each connected side in a user-defined order
@@ -29,6 +31,7 @@ tip.pipe.ap.pipe_items_adv_wood=Extraction pipe allowing simple item filtering
 tip.pipe.ap.pipe_items_gravity_feed=Extracts items slowly from the bottom of an inventory without needing power
 tip.pipe.ap.pipe_items_teleport=Instantly transports items between linked pipes
 tip.pipe.ap.pipe_items_distribution=Outputs a configurable ratio of items to each side
+tip.pipe.ap.pipe_fluids_distribution=Outputs a configurable ratio of fluid to each side
 tip.pipe.ap.pipe_items_closed=Instead of dropping items, stores them in its internal inventory
 tip.pipe.ap.pipe_fluids_teleport=Instantly transports fluids between connected pipes
 tip.pipe.ap.pipe_power_teleport=Instantly transports power between connected pipes

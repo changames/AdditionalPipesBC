@@ -6,6 +6,7 @@ import buildcraft.additionalpipes.pipes.PipeBehaviorAddition;
 import buildcraft.additionalpipes.pipes.PipeBehaviorAdvWood;
 import buildcraft.additionalpipes.pipes.PipeBehaviorClosed;
 import buildcraft.additionalpipes.pipes.PipeBehaviorDistribution;
+import buildcraft.additionalpipes.pipes.PipeBehaviorDistributionFluids;
 import buildcraft.additionalpipes.pipes.PipeBehaviorGravityFeed;
 import buildcraft.additionalpipes.pipes.PipeBehaviorJeweled;
 import buildcraft.additionalpipes.pipes.PipeBehaviorPriorityInsertion;
@@ -45,6 +46,10 @@ public class APPipeDefintions
 	// Distribution Pipe
 	public static Item distributionPipeItem;
 	public static PipeDefinition distributionPipeDef;
+	
+	// Fluid Distribution Pipe
+	public static Item distributionPipeFluidItem;
+	public static PipeDefinition distributionPipeFluidDef;
 	
 	// Gravity Feed Pipe
 	public static Item gravityFeedPipeItem;
@@ -105,6 +110,12 @@ public class APPipeDefintions
 		distributionPipeDef = distPipeDefBuilder.define();
 		distributionPipeItem = PipeCreator.createPipeItem(distributionPipeDef);
 		
+		PipeDefinitionBuilder distPipeFluidDefBuilder = new PipeDefinitionBuilder().flowFluid().idTexPrefix("pipe_fluids_distribution").logic(PipeBehaviorDistributionFluids::new, PipeBehaviorDistributionFluids::new);
+		attachSidedSuffixes(distPipeFluidDefBuilder);
+		distPipeFluidDefBuilder.itemTex(EnumFacing.EAST.ordinal());
+		distributionPipeFluidDef = distPipeFluidDefBuilder.define();
+		distributionPipeFluidItem = PipeCreator.createPipeItem(distributionPipeFluidDef);
+		
 		gravityFeedPipeDef = new PipeDefinitionBuilder().flowItem().idTexPrefix("pipe_items_gravity_feed").texSuffixes("_up", "_sides").logic(PipeBehaviorGravityFeed::new, PipeBehaviorGravityFeed::new).define();
 		gravityFeedPipeItem = PipeCreator.createPipeItem(gravityFeedPipeDef);
 		
@@ -154,6 +165,9 @@ public class APPipeDefintions
 		
 		// set Switch Fluid Pipe to be halfway between the Iron and Gold FLuid Pipes
 		PipeApi.fluidTransferData.put(fluidsSwitchPipeDef, new PipeApi.FluidTransferInfo(BCTransportConfig.baseFlowRate * 6, 10));
+		
+		// set Fluid Distribution Pipe to be halfway between the Iron and Gold Fluid Pipes
+		PipeApi.fluidTransferData.put(distributionPipeFluidDef, new PipeApi.FluidTransferInfo(BCTransportConfig.baseFlowRate * 6, 10));
 		
 		// set Water Pump Pipe to match its output capacity
 		PipeApi.fluidTransferData.put(waterPumpPipeDef, new PipeApi.FluidTransferInfo(APConfiguration.waterPumpWaterPerTick, 10));
